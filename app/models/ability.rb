@@ -11,5 +11,9 @@ class Ability
     if user.id
       can [:crud], User, {user_id: user.id} # Il faut être le propriétaire d'un enregistrement pour l'éditeur
     end
+
+    if user.admin?
+      can :manage, :all # L'administrateur peut tout modifier
+    end
   end
 end
