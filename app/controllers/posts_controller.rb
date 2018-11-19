@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 	load_and_authorize_resource
-	
+
 	def index
 		@posts = Post.all
 	end
@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
+		@comments = Comment.all
 	end
 
 	def edit

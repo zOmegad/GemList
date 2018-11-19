@@ -10,8 +10,12 @@
 <p id=”notice”><%= notice %></p>
 <h1>Example</h1>
 <p>Lorem ipsum …</p>
-<% @posts.each do |y| %>
-	<%= y.title %>
-	<%= y.content %>
+<% Post.all.each do |y| %>
+	<strong>Nom de la gem :</strong> <%= y.title %><br>
+	<strong>Infos sur la gems</strong> <%= y.content %>
 	<br>
+	  	<!-- Condition ternaire -->
+  	<p> 
+  		<%= "#{Comment.where(post_id: y.id).count} #{(Comment.where(post_id: y.id).count > 1) ? "commentaires" : "commentaire"}" %>
+	</p>
 <%end%>
