@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-	class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -12,6 +11,7 @@ class CommentsController < ApplicationController
   end
 
   def new
+
     @post = Post.find(params[:post_id])
     @comment = Post.find(params[:post_id]).comments.new
   end
@@ -24,9 +24,8 @@ class CommentsController < ApplicationController
     @comment = Post.find(params[:post_id]).comments.new(comment_params)
 
     respond_to do |format|
-      if @comment.save
+      @comment.save
         format.html { redirect_to post_path(params[:post_id]) }
-      end
     end
   end
 
@@ -56,5 +55,4 @@ class CommentsController < ApplicationController
       @temparam.merge!(user_id: session[:user_id])
       return @temparam
     end
-end
 end

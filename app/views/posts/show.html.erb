@@ -1,0 +1,14 @@
+<strong>Title:</strong>
+<%= @post.title %><br>
+<strong>Info:</strong>
+<%= @post.content %><br>
+
+<% for comment in @comments.where(post_id: @post.id) %>
+<strong>Commentary :</strong>
+<%= comment.id %><br>
+
+<%= comment.content %><br>
+
+<% end %>
+
+<%= link_to 'Comment', new_post_comment_path(@post) %>

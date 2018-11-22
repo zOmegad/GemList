@@ -1,9 +1,9 @@
 <%= form_with(model: @comment, url: [@post, @comment]) do |form| %>
 
-<div>
+<div style="text-align: center;">
   <form action="/posts/new">
     <div>
-      <%= form.text_field :content, placeholder:"Post your comment", label: "Post your comment", label_class:"form_label" %>
+      <%= form.text_area :content, placeholder:"Post your comment", label: "Post your comment", label_class:"form_label" %>
     </div>
 
       <%= form.button :submit %>
