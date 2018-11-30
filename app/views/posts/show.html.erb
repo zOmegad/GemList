@@ -1,8 +1,10 @@
+<img src=<%= @post.image %>><br>
 <strong>Title:</strong>
 <%= @post.title %><br>
 <strong>Info:</strong>
+<%= @post.intro %><br>
+<strong>Content</strong>
 <%= @post.content %><br>
-
 <% for comment in @comments.where(post_id: @post.id) %>
 <strong>Commentary :</strong>
 <%= comment.id %><br>
