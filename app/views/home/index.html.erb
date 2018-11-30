@@ -1,9 +1,11 @@
+<br>
+<div class="grid-container">
 <% Post.all.each do |post| %>
-<figure class="snip1216">
-  <% if post.image %>
+<figure class="snip1216 grid-item">
+  <% if post.image.include? ".png" || ".jpg" || ".jpeg" %>
   <div class="image"><img style="height:320px; width: auto" src=<%=post.image%> alt="sample69"/></div>
   <% else %>
-  <div class="image"><img style="height:320px; width: auto" src="https://cdn-images-1.medium.com/max/1200/0*JdZg4EfijEXf3hur.png" alt="sample69"/></div>
+  <div class="image"><img style="height:320px; width: auto" src="http://image.noelshack.com/fichiers/2018/48/5/1543593694-0-jdzg4efijexf3hur.png" alt="sample69"/></div>
   <% end %>
   <figcaption>
     <div class="date"><span class="day">28</span><span class="month">Up</span></div>
@@ -18,3 +20,4 @@
   </footer>
 </figure>
 <% end %>
+</div>

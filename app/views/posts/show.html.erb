@@ -14,3 +14,46 @@
 <% end %>
 
 <%= link_to 'Comment', new_post_comment_path(@post) %>
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>Gem <%= @post.title %></h2>
+      <h5><%= @post.created_at %></h5>
+      <img class="fakeimg" style="height:200px;" src=<%= @post.image %>>
+      <p>Introduction :</p>
+      <p><%= @post.intro %></p>
+    </div>
+    <div class="card">
+      <h2>Informations sur la gem</h2>
+      <p><%= @post.content %></p>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>About Me</h2>
+      <div class="fakeimg" style="height:100px;">Image</div>
+      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+    </div>
+    <div class="card">
+      <h3>Popular Post</h3>
+      <div class="fakeimg">Image</div><br>
+      <div class="fakeimg">Image</div><br>
+      <div class="fakeimg">Image</div>
+    </div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p>Some text..</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>   <%= render "comments/form",
+           :comment => @comment %> </h2>
+
+</div>
+   <div class="card">
+      <h2>Comments</h2>
+      <p><%= @post.content %></p>
+    </div>
+  </div>
