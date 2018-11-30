@@ -9,7 +9,7 @@ class Ability
     can [:read, :create], User # Seul les actions :index, :show sont accessible publiquement
 
     if user.id
-      can [:crud], User, {user_id: user.id} # Il faut être le propriétaire d'un enregistrement pour l'éditeur
+      can [:read], :all
     end
 
     if user.admin?
