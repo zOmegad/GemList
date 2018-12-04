@@ -1,26 +1,28 @@
 <%= form_with(model: post, local: true) do |form| %>
-
+<div style="margin: 0 auto; width: 50%; text-align: center;" class="card">
+  <h1>New Gem</h1>
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "form-control", :placeholder => "The name of the gem" %>
   </div>
 
   <div class="field">
     <%= form.label :intro %>
-    <%= form.text_area :intro %>
+    <%= form.text_area :intro, :placeholder => "A little intro of the gem", class: "form-control" %>
   </div>  
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.text_area :content, :placeholder => "Explain the gems here, version, how to use etc..", class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :image %>
-    <%= form.text_field :image %>
-  </div>
+    <%= form.text_field :image, :placeholder => "Enter URL of image, only .jpg, jpeg or .png", class: 'form-control'%>
+  </div><br>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Submit", :class => "btn btn-dark" %>
   </div>
 <% end %>
+</div>

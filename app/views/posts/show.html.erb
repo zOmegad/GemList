@@ -1,8 +1,12 @@
 <div style="margin-left: 20%;">
     <div class="leftcolumn">
         <div class="card">
-            <h5><%= @post.created_at %></h5>
+            <h5>Posted in: <%= @post.created_at %> by <%= User.find(@post.user_id).username %></h5>
+            <% if @post.image.include?(".png") || @post.image.include?(".jpg") || @post.image.include?(".jpeg")%>
             <img class="fakeimg" style="height:200px;" src=<%= @post.image %>>
+            <% else %>
+            <img style="width: 300px; height: auto;" src="http://image.noelshack.com/fichiers/2018/48/5/1543593694-0-jdzg4efijexf3hur.png" alt="sample69"/>
+            <% end %>
             <p>Introduction :</p>
             <p>
                 <%= @post.intro %>
@@ -16,7 +20,6 @@
         </div>
     </div>
 </div><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <div style=" margin: 0 auto; width: 50%;" class="container">
         <div class="col-sm-10 col-sm-offset-1" id="logout">
             <div style="margin-left: 10%;" class="comment-container">

@@ -9,7 +9,7 @@ class Ability
     can [:read, :create], User # Seul les actions :index, :show sont accessible publiquement
 
     if user.id
-      can [:read], :all
+      can [:read, :create], Post
     end
 
     if user.admin?
