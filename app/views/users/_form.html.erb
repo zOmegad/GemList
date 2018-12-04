@@ -11,22 +11,25 @@
     </div>
   <% end %>
 
+<div style="margin: 0 auto; width: 50%; text-align: center;" class="card">
+  <h1>New User</h1>
   <div class="field">
     <%= form.label :username %>
-    <%= form.text_field :username %>
+    <%= form.text_field :username, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= form.password_field :password, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
-  </div>
+    <%= form.password_field :password_confirmation, class: 'form-control' %>
+  </div><br>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Submit', :class => "btn btn-dark" %>
   </div>
 <% end %>
+</div>
