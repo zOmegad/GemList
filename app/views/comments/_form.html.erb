@@ -1,12 +1,12 @@
 <%= form_with(model: @comment, url: [@post, @comment]) do |form| %>
 
 <div style="text-align: center;">
-  <form action="/posts/new">
+  <form action="/posts/new" class="form-horizontal" id="commentForm" role="form">
     <div>
-      <%= form.text_area :content, placeholder:"Post your comment", label: "Post your comment", label_class:"form_label" %>
+      <%= form.text_area :content, placeholder:"Post your comment", label: "Post your comment", label_class:"form_label", class:"form-control", style:"margin: 0 auto; width: 50%;", rows:"5", class:"form-control" %>
     </div>
-
-      <%= form.button :submit %>
+	<br>
+      <%= form.button :submit, class:"btn btn-success btn-circle text-uppercase" %>
       
   </form>
 </div>
