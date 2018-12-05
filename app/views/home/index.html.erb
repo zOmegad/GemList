@@ -3,7 +3,11 @@
       <div class="photo" style="background-image: url(https://images.readwrite.com/wp-content/uploads/2018/04/coding-825x500.jpg)"></div>
     </div>
     <div class="description">
+      <% if current_user %>
+      <h1>Hey <%=current_user.username %>, welcome !</h1>
+      <% else %>
       <h1>Hey you, welcome !</h1>
+      <% end %>
       <p> Welcome to GemList, the best place to find the bests gems to use with Ruby :)</p>
       <p>You must be logged if you want to add, edit and comment Gem posts. </p>
     </div>
@@ -31,3 +35,4 @@
 </figure>
 <% end %>
 </div>
+<br>
