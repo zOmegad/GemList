@@ -14,7 +14,7 @@
         <div class="card">
             <h2>Informations sur la gem</h2>
             <p>
-                <%= @post.content %>
+                <%= @post.content.html_safe %>
             </p>
         </div>
     </div>
