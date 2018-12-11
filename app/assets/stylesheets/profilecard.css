@@ -1,0 +1,102 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,200,300,800);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+figure.snip0042 {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 220px;
+  max-width: 310px;
+  width: 100%;
+  background: #ffffff;
+  color: #ffffff;
+}
+figure.snip0042 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+figure.snip0042 > img {
+  max-width: 100%;
+}
+figure.snip0042 figcaption {
+  padding: 20px 30px 20px 25%;
+  position: relative;
+}
+figure.snip0042 figcaption h2,
+figure.snip0042 figcaption p {
+  margin: 0;
+  text-align: right;
+  padding: 10px 0;
+  right: 0;
+  width: 100%;
+}
+figure.snip0042 figcaption h2 {
+  font-size: 1.3em;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+figure.snip0042 figcaption h2 span {
+  font-weight: 800;
+}
+figure.snip0042 figcaption p {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+figure.snip0042 figcaption .icons {
+  width: 100%;
+  text-align: right;
+}
+figure.snip0042 figcaption .icons i {
+  font-size: 26px;
+  padding: 5px;
+  color: #ffffff;
+  top: 50%;
+}
+figure.snip0042 figcaption a {
+  opacity: 0.3;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+figure.snip0042 figcaption a:hover {
+  opacity: 0.8;
+}
+figure.snip0042 .position {
+  width: 100%;
+  text-align: right;
+  padding: 8px 30px 13px;
+  font-size: 0.8em;
+  opacity: 0.8;
+  font-style: italic;
+}
+figure.snip0042:after {
+  position: absolute;
+  top: 0;
+  left: -20%;
+  height: 110%;
+  width: 30%;
+  background-color: #000000;
+  content: '';
+  border-right: 4px solid #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  -webkit-transform: skewX(-7deg) translateX(0px);
+  transform: skewX(-7deg) translateX(0px);
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+figure.snip0042.red {
+  background: #962d22;
+  margin: 0 auto;
+  width: 50%;
+  margin-top: 30px;
+  border-radius: 3px;
+}
+figure.snip0042.red:after {
+  background: #6d2018;
+}
+figure.snip0042:hover:after,
+figure.snip0042.hover:after {
+  -webkit-transform: skewX(-7deg) translateX(10px);
+  transform: skewX(-7deg) translateX(10px);
+}

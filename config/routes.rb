@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   root "home#index"
+  get '/profil', to: 'users#profil'
   
   resources :users
   resources :posts do 
