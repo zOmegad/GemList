@@ -1,5 +1,12 @@
     <div style="margin: 0 auto; width: 60%;">
         <div class="card">
+            <% if current_user.admin? %>
+                <%= link_to 'Delete Gem', 
+                         @post, 
+                         method: :delete,
+                         data: { confirm: 'Are you sure?' },
+                         class: "btn btn-danger" %>  
+            <% end %>
             <h5>Posted in: <%= @post.created_at %> by <%= User.find(@post.user_id).username %></h5>
             <% if @post.image.include?(".png") || @post.image.include?(".jpg") || @post.image.include?(".jpeg")%>
             <img class="fakeimg" style="height:200px;" src=<%= @post.image %>>

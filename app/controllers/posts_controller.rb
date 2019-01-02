@@ -41,8 +41,7 @@ class PostsController < ApplicationController
 
 	def destroy
 		@post = Post.find(params[:id])
-		if @post.present
-			@gpost.destroy
+		if @post.destroy
 		    respond_to do |format|
 		    	format.html { redirect_to "/", notice: 'Post has been destroyed.'}
 		    end
