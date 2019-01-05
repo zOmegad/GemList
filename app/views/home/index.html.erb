@@ -1,38 +1,40 @@
-   <div class="blog-card">
+<div class="blog-card">
     <div class="meta">
-      <div class="photo" style="background-image: url(https://images.readwrite.com/wp-content/uploads/2018/04/coding-825x500.jpg)"></div>
+        <div class="photo" style="background-image: url(https://images.readwrite.com/wp-content/uploads/2018/04/coding-825x500.jpg)"></div>
     </div>
     <div class="description">
-      <% if current_user %>
-      <h1>Hey <%=current_user.username %>, welcome !</h1>
-      <% else %>
-      <h1>Hey you, welcome !</h1>
-      <% end %>
-      <p> Bienvenue sur GemList, l'endroit ou trouver les meilleurs gems à utiliser avec Ruby :)</p>
-      <p>Vous devez vous connecter pour ajouter ou commenter un post. </p>
+        <% if current_user %>
+        <h1>Hey <%=current_user.username %>, welcome !</h1>
+        <% else %>
+        <h1>Hey you, welcome !</h1>
+        <% end %>
+        <p> Bienvenue sur GemList, l'endroit ou trouver les meilleurs gems à utiliser avec Ruby :)</p>
+        <p>Vous devez vous connecter pour ajouter ou commenter un post. </p>
     </div>
-  </div>
+</div>
 <br>
 <div style="margin-left: 11%;" class="grid-container">
-<% Post.all.each do |post| %>
-<figure style="border-radius: 5px;" class="snip1216 grid-item">
-  <% if post.image.include?(".png") || post.image.include?(".jpg") || post.image.include?(".jpeg")%>
-  <div class="image"><img style="width: 300px; height: auto;" src=<%=post.image%> alt="sample69"/></div>
-  <% else %>
-  <div class="image"><img style="width: 300px; height: auto;" src="http://image.noelshack.com/fichiers/2018/48/5/1543593694-0-jdzg4efijexf3hur.png" alt="sample69"/></div>
-  <% end %>
-  <figcaption>
-    <div class="date"><span class="day"><%= rand(1..30) %></span><span class="month">Up</span></div>
-    <h3><%= post.title %></h3>
-    <p>
-      <%= post.intro %>
-      <%= link_to "", post %>
-    </p>
-  </figcaption>
-  <footer>
-    <div class="comments"><i class="ion-chatboxes"></i><%=Comment.where(post_id: post.id).count%></div>
-  </footer>
-</figure>
-<% end %>
+    <% Post.all.each do |post| %>
+    <figure style="border-radius: 5px;" class="snip1216 grid-item">
+        <% if post.image.include?(".png") || post.image.include?(".jpg") || post.image.include?(".jpeg")%>
+        <div class="image"><img style="width: 300px; height: auto;" src=<%=post.image%> alt="sample69"/></div>
+            <% else %>
+            <div class="image"><img style="width: 300px; height: auto;" src="http://image.noelshack.com/fichiers/2018/48/5/1543593694-0-jdzg4efijexf3hur.png" alt="sample69"/></div>
+                <% end %>
+                <figcaption>
+                    <div class="date"><span class="day"><%= rand(1..30) %></span><span class="month">Up</span></div>
+                    <h3><%= post.title %></h3>
+                    <p>
+                        <%= post.intro %>
+                        <%= link_to "", post %>
+                    </p>
+                </figcaption>
+                <footer>
+                    <div class="comments"><i class="ion-chatboxes"></i>
+                        <%=Comment.where(post_id: post.id).count%>
+                    </div>
+                </footer>
+    </figure>
+    <% end %>
 </div>
 <br>

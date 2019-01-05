@@ -7,9 +7,9 @@
                          method: :delete,
                          data: { confirm: 'Are you sure?' },
                          class: "btn btn-danger" %><br>
-                <%= link_to 'Edit Gem', edit_post_path(@post), class: "btn btn-success" %>
+                <%= link_to 'Edit Gem', edit_post_path(@post), class: "btn btn-success" %><br>
             <% end %>
-            <h5>Posted in: <%= @post.created_at %> by <%= User.find(@post.user_id).username %></h5>
+            <h5>Posté par <strong><%= User.find(@post.user_id).username %></strong></h5>
             <% if @post.image.include?(".png") || @post.image.include?(".jpg") || @post.image.include?(".jpeg")%>
             <img class="fakeimg" style="height:200px;" src=<%= @post.image %>>
             <% else %>
