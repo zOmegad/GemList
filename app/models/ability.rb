@@ -7,7 +7,7 @@ class Ability
     alias_action :create, :read, :update, :destroy, to: :crud # Pour ne pas se répéter
 
     can [:read, :create, :profil], User # Seul les actions :index, :show sont accessible publiquement
-    can [:read], Post
+    can [:read], :all
 
     if user.id
       can [:read, :create], Post

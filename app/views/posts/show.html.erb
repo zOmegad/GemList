@@ -1,6 +1,7 @@
     <div style="margin: 0 auto; width: 60%;">
         <div class="card">
-            <% if current_user.admin? %>
+            <% if current_user.nil? %>
+            <% else %>
                 <%= link_to 'Delete Gem', 
                          @post, 
                          method: :delete,
