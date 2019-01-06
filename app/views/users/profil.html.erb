@@ -1,8 +1,8 @@
 <figure class="snip0042 red">
     <figcaption>
         <h2> Welcome <span><%= current_user.username %></span></h2>
-        <p>Number of Gems posted : <%= Post.all.where(user_id: current_user.id).count %></p>
-        <p>Number of Comments : <%= Comment.all.where(user_id: current_user.id).count %></p>
+        <p>Nombre(s) de gem(s) postée(s) : <%= Post.all.where(user_id: current_user.id).count %></p>
+        <p>Nombre(s) de commentaire(s) : <%= Comment.all.where(user_id: current_user.id).count %></p>
         <div class="icons">
         </div>  
     </figcaption>
